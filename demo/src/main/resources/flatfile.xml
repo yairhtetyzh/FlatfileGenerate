@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03">
+
+    <stream name="flatFile" format="fixedlength">
+
+        <record name="header" class="com.codetest.flatfile.demo.model.Header" minOccurs="1" maxOccurs="1">
+            <field name="recordType" at="0" length="1"/>
+            <field name="fileType" at="13" length="9"/>
+        </record>
+        <record name="body" class="com.codetest.flatfile.demo.model.Body" minOccurs="1" maxOccurs="unbounded">
+            <field name="referenceNo" at="19" length="14"/>
+            <field name="amount" at="39" length="16"/>
+        </record>
+        
+        <record name="trailer" class="com.codetest.flatfile.demo.model.Trailer" minOccurs="1" maxOccurs="1">
+            <field name="recordType" at="0" length="1"/>
+            <field name="fileType" at="13" length="9"/>
+        </record>
+
+    </stream>
+</beanio>
